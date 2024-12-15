@@ -7,4 +7,4 @@ Project status shall be listed below.
 
 ## Project stages
 [Planning] 
-1. [Project Status 1](./report/Yangtse_report1215.doc) 
+1. [Project Status 1](./report/Yangtse_report1215.pdf) 
