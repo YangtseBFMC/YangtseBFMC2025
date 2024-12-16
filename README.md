@@ -7,4 +7,4 @@ Project status shall be listed below.
 
 ## Project stages
 [Planning] 
-1. [Project Status 1](Brain/Project status/profect status 1) 
+1. [Project Status 1](./Brain/Project status/profect status 1) 
