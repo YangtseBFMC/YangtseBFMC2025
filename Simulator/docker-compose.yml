@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  gazebo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+      - HTTP_PROXY=http://192.168.31.174:7890
+      - HTTPS_PROXY=http://192.168.31.174:7890
+    container_name: bfmc_simulator
+    environment:
+      - DISPLAY=${DISPLAY}            # Forward display to host
+      - HTTP_PROXY=http://192.168.31.174:7890
+      - HTTPS_PROXY=http://192.168.31.174:7890
+      - NO_PROXY=localhost,127.0.0.1   # 排除本地地址
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix # Enable GUI support
+      - /dev/dri:/dev/dri             # GPU rendering support
+      - /home/cc/DriveBeyondBFMC-project_status_1:/sims
+    devices:
+      - /dev/dri                      # Access GPU for rendering
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # 自动指向宿主机网络
+    stdin_open: true
+    tty: true
